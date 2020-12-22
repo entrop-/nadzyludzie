@@ -1,10 +1,11 @@
 <template>
-  <h1>Nadzy ludzie</h1>
+  <heading />
   <navigation />
 </template>
 
 <script>
 import navigation from "@/components/navigation/Nav";
+import heading from "@/components/navigation/Heading";
 import category   from "@/components/category/Category";
 import { ref }    from '@vue/reactivity';
 
@@ -19,8 +20,15 @@ export default {
 
     return {
       navigation,
-      category
+      category,
+      heading
     }
   }
 }
 </script>
+<style>
+
+body {
+  @apply bg-black text-gray-200;
+}
+</style>
