@@ -38,7 +38,8 @@ export default {
       'Hot', 'Slutty', 'Sleeping', 'Horny'];
     const con = [
         'girls', 'guy', 'sweet sixteen', 'good boi', 'MILF', 'bitch', 'stepsister', 'mailman',
-        'twin sisters', 'midget', 'sister', 'amateur', 'gamer girl', 'priest', 'streamer', 'pizza guy', 'senpai'
+        'twin sisters', 'midget', 'sister', 'amateur', 'gamer girl', 'priest', 'streamer', 'pizza guy', 'senpai',
+        'blonde', 'waifu'
     ];
     const con2 = [
         'hard fucks', 'is going wild with', 'licks off', 'is powerfisting', 'shags', 'gets it on with', 'bonks', 'bangs', 'titty twists',
@@ -46,7 +47,7 @@ export default {
     ];
     const con3 = ['on', 'for', 'next to', 'in']
     const con4 = ['fake taxi', 'prom night', 'midgets', 'public', 'the shower', 'sleeping sister', 'dad`s car',
-      'one cup', 'internet', 'money', 'valentine`s day' ]
+      'one cup', 'internet', 'money', 'valentine`s day', 'church' ]
 
     const title = computed(() => {
       return randomItem(con0) +' '

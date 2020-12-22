@@ -29,8 +29,13 @@ const routes = [
         component: Category
       },
       {
-        name: 'Public',
-        path: '/public',
+        name: 'Amateur',
+        path: '/amateur',
+        component: Category
+      },
+      {
+        name: 'Natural',
+        path: '/natural',
         component: Category
       },
       {

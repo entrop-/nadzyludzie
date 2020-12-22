@@ -45,6 +45,9 @@ export default {
   @apply block;
 }
 h2 {
-  @apply block text-xl mb-5;
+  @apply w-full block text-xl mb-5;
+}
+main {
+  @apply flex flex-wrap p-3;
 }
 </style>

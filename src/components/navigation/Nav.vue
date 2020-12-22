@@ -8,6 +8,8 @@
 <!--      //sojuz x iga-->
       <li><router-link :to="{ name: 'Gay' }">Gay</router-link></li>
 <!--      //sojuz x tomaszek-->
+      <li><router-link :to="{ name: 'Amateur' }">Amateur</router-link></li>
+<!--      //sojuz x tomaszek-->
       <li><router-link :to="{ name: 'Gangbang' }">Gang bang</router-link></li>
 <!--      //sojuz x tomaszek x iga-->
       <li><router-link :to="{ name: 'Natural' }">Natural</router-link></li>
