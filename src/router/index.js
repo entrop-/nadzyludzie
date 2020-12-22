@@ -22,6 +22,26 @@ const routes = [
         name: 'Furry',
         path: '/furry',
         component: Category
+      },
+      {
+        name: 'Lesbian',
+        path: '/lesbian',
+        component: Category
+      },
+      {
+        name: 'Public',
+        path: '/public',
+        component: Category
+      },
+      {
+        name: 'Orgy',
+        path: '/orgy',
+        component: Category
+      },
+      {
+        name: 'Hentai',
+        path: '/hentai',
+        component: Category
       }
     ]
   }

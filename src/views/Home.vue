@@ -29,6 +29,9 @@ export default {
 <style>
 
 body {
-  @apply bg-black text-gray-200;
+  @apply bg-black text-gray-200 flex flex-wrap;
+}
+main {
+  @apply w-4/5;
 }
 </style>

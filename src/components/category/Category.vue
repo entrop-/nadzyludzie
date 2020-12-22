@@ -1,8 +1,10 @@
 <template>
   <heading />
   <navigation />
-  <h1>{{category}}</h1>
-  <one-image v-for="image in images" :key="image" :src="image.src" class="images" />
+  <main>
+    <h2>Kategoria: <strong>{{category}}</strong></h2>
+    <one-image v-for="image in images" :key="image" :src="image.src" class="images" />
+  </main>
 </template>
 
 <script>
@@ -38,8 +40,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .images {
   @apply block;
+}
+h2 {
+  @apply block text-xl mb-5;
 }
 </style>

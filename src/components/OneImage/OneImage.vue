@@ -1,7 +1,10 @@
 <template>
   <article class="wrapper">
     <figure :style="{ backgroundImage: `url(${url})` }" class="tile">
-      <figcaption class="desc">{{time}}</figcaption>
+      <figcaption class="desc">
+        <span class="block leading-none"><i class="material-icons">play_arrow</i></span>
+        <span class="block text-right ">{{time}}</span>
+      </figcaption>
     </figure>
     <header class="title">{{ title }}</header>
   </article>
@@ -31,20 +34,27 @@ export default {
 
       return t1+':'+t2;
     })
-
+    const con0 = ['Fake', 'Innocent', 'White', 'Black', 'Latino', 'Big titty', 'Basic', 'My', 'Hot', 'Slutty', 'Sleeping'];
     const con = [
-        'Two girls', 'Old guy', 'Sweet sixteen', 'Good boi', 'MILF', 'Innocent white bitch', 'My stepsister', 'Mailman',
-        'Twin sisters', 'Black guy', 'Midget', 'Sleeping sister', 'Hot amateur', 'Gamer girl', 'Fake priest', 'Streamer'
+        'girls', 'guy', 'sweet sixteen', 'good boi', 'MILF', 'bitch', 'stepsister', 'mailman',
+        'twin sisters', 'midget', 'sister', 'amateur', 'gamer girl', 'priest', 'streamer', 'pizza guy', 'senpai'
     ];
     const con2 = [
         'hard fucks', 'is going wild with', 'licks off', 'is powerfisting', 'shags', 'gets it on with', 'bonks', 'bangs', 'titty twists',
-        'puts his big black cock in', 'cums on'
+        'puts his big black cock in', 'cums on', 'masturbates', 'wanks off'
     ];
-    const con3 = ['on', 'over', 'for', 'while', 'next to', 'in']
-    const con4 = ['fake taxi', 'prom night', 'midgets', 'public', 'the shower', 'sleeping sister', 'dad`s car', 'one cup', 'internet' ]
+    const con3 = ['on', 'for', 'next to', 'in']
+    const con4 = ['fake taxi', 'prom night', 'midgets', 'public', 'the shower', 'sleeping sister', 'dad`s car',
+      'one cup', 'internet', 'money' ]
 
     const title = computed(() => {
-      return randomItem(con) +' '+ randomItem(con2)+' ' + randomItem(con).toLowerCase()+' '  +randomItem(con3)+' ' +randomItem(con4);
+      return randomItem(con0) +' '
+          + randomItem(con)+' '
+          + randomItem(con2)+' '
+          + randomItem(con0).toLowerCase() +' '
+          + randomItem(con)+' '
+          + randomItem(con3)+' '
+          + randomItem(con4);
     });
     function randomItem(items) { return items[Math.floor(Math.random() * items.length)]; }
 
@@ -59,16 +69,16 @@ export default {
 
 <style lang="scss">
 .wrapper {
-  @apply w-full md:w-1/3 p-3 border-red-500 border-2;
+  @apply w-full md:w-1/3 p-3 border-pink-300 border-2;
 }
 .tile {
-  height: 320px;
+  height: 280px;
   @apply w-full bg-cover bg-no-repeat bg-center relative;
 }
 .title {
   @apply font-bold mt-2;
 }
 .desc {
-  @apply absolute bottom-0 w-full bg-black bg-opacity-50 text-white p-3 text-right;
+  @apply absolute bottom-0 w-full bg-black bg-opacity-50 text-white p-3 flex flex-row justify-between;
 }
 </style>
