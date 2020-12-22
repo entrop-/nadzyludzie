@@ -34,8 +34,8 @@ const routes = [
         component: Category
       },
       {
-        name: 'Orgy',
-        path: '/orgy',
+        name: 'Gangbang',
+        path: '/gangbang',
         component: Category
       },
       {

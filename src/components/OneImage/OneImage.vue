@@ -34,7 +34,8 @@ export default {
 
       return t1+':'+t2;
     })
-    const con0 = ['Fake', 'Innocent', 'White', 'Black', 'Latino', 'Big titty', 'Basic', 'My', 'Hot', 'Slutty', 'Sleeping'];
+    const con0 = ['Fake', 'Innocent', 'White', 'Black', 'Latino', 'Big titty', 'Basic', 'My',
+      'Hot', 'Slutty', 'Sleeping', 'Horny'];
     const con = [
         'girls', 'guy', 'sweet sixteen', 'good boi', 'MILF', 'bitch', 'stepsister', 'mailman',
         'twin sisters', 'midget', 'sister', 'amateur', 'gamer girl', 'priest', 'streamer', 'pizza guy', 'senpai'
@@ -45,7 +46,7 @@ export default {
     ];
     const con3 = ['on', 'for', 'next to', 'in']
     const con4 = ['fake taxi', 'prom night', 'midgets', 'public', 'the shower', 'sleeping sister', 'dad`s car',
-      'one cup', 'internet', 'money' ]
+      'one cup', 'internet', 'money', 'valentine`s day' ]
 
     const title = computed(() => {
       return randomItem(con0) +' '
