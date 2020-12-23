@@ -1,6 +1,5 @@
 <template>
   <nav :class="showme ? 'fixed' : 'hidden'">
-    <div class="close"></div>
     <ul>
 
       <li><router-link :to="{ name: 'Furry' }" @click="handleClick">Furry</router-link></li>

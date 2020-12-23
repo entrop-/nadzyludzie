@@ -1,6 +1,6 @@
 <template>
   <heading />
-  <navigation :show="show" @handleClick="handleMenu" />
+  <navigation :show="show" @handleClick="closeMenu" />
   <main>
     <div class="container relative flex flex-no-wrap justify-between mb-5">
       <h2 v-if="!search">Kategoria: <strong>{{category}}</strong></h2>
@@ -57,9 +57,11 @@ export default {
 
     });
     const handleMenu = function() {
-      show.value = !show.value;
+        show.value = !show.value;
     }
-
+    const closeMenu = function() {
+      show.value= false;
+    }
     return {
       oneImage,
       images,
@@ -68,7 +70,8 @@ export default {
       heading,
       search,
       show,
-      handleMenu
+      handleMenu,
+      closeMenu
     }
   }
 }

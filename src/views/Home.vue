@@ -25,9 +25,9 @@ export default {
   setup() {
     const password = ref(null);
     let showError = ref(false);
-    const words = ['ekonomia', 'polityka', 'odpowiedzialność', 'podatki']
+    const words = ['ekonomia', 'polityka', 'odpowiedzialność', 'podatki', 'kredyt', 'odpowiedzialnosc', 'eskapizm']
     const onSubmit = function () {
-      if (words.includes(password.value)) {
+      if (words.includes(password.value.toLowerCase())) {
         document.cookie = "adult=true";
         router.push({name: 'Amateur'})
       } else {
