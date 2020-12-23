@@ -1,9 +1,12 @@
 <template>
   <heading />
-  <navigation />
+  <navigation :show="show" />
   <main>
-    <h2 v-if="!search">Kategoria: <strong>{{category}}</strong></h2>
-    <h2 v-else>Wyniki dla: <strong>{{search}}</strong></h2>
+    <div class="container relative flex flex-no-wrap justify-between mb-5">
+      <h2 v-if="!search">Kategoria: <strong>{{category}}</strong></h2>
+      <h2 v-else>Wyniki dla: <strong>{{search}}</strong></h2>
+      <button class="hamburger" @click.prevent="handleMenu"><i class="material-icons">menu</i></button>
+    </div>
     <one-image v-for="image in images" :key="image" :src="image.src" :search="search" class="images" />
   </main>
 </template>
@@ -14,7 +17,7 @@ import navigation from "@/components/navigation/Nav";
 import heading from "@/components/navigation/Heading";
 import { useRoute } from 'vue-router';
 import fileList          from '@/assets/images';
-import { computed } from '@vue/reactivity';
+import { computed, ref } from '@vue/reactivity';
 
 export default {
   beforeRouteEnter(to, from, next) {
@@ -26,6 +29,7 @@ export default {
   },
   setup() {
     const route = useRoute();
+    const show = ref(false);
     const search = computed(()=> { return route.params.kink });
     const category = computed(()=> { return route.name.toLowerCase() });
     const fileNames = computed(()=> { return fileList[category.value] });
@@ -51,6 +55,9 @@ export default {
       }
 
     });
+    const handleMenu = function() {
+      show.value = !show.value;
+    }
 
     return {
       oneImage,
@@ -58,20 +65,25 @@ export default {
       category,
       navigation,
       heading,
-      search
+      search,
+      show,
+      handleMenu
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.images {
-  @apply block;
-}
 h2 {
-  @apply w-full block text-xl mb-5;
+  @apply w-full block text-xl ;
 }
 main {
-  @apply flex flex-wrap p-3;
+  @apply flex flex-wrap px-5 md:px-3;
+}
+.hamburger {
+  @apply md:hidden text-pink-300 leading-none;
+  i {
+    font-size: 2rem;
+  }
 }
 </style>

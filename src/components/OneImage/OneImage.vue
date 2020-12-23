@@ -83,7 +83,7 @@ export default {
 
 <style lang="scss">
 .wrapper {
-  @apply w-full md:w-1/3 p-3 border-pink-300 border-2;
+  @apply w-full md:w-1/3 p-3 border-pink-300 border-2 mb-5 md:mb-0;
 }
 .tile {
   height: 280px;

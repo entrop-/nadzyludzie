@@ -1,5 +1,6 @@
 <template>
-  <nav>
+  <nav :class="showme ? 'fixed' : 'hidden'">
+    <div class="close"></div>
     <ul>
 
       <li><router-link :to="{ name: 'Furry' }">Furry</router-link></li>
@@ -19,9 +20,27 @@
     </ul>
   </nav>
 </template>
+<script>
+import { computed } from '@vue/reactivity';
+
+export default {
+  props: {
+    show: {
+      type: Boolean,
+      default: false
+    }
+  },
+  setup(props) {
+    const showme = computed(() => { return props.show });
+    return {
+      showme
+    }
+  }
+}
+</script>
 <style scoped>
 nav {
-  @apply w-1/5 px-5;
+  @apply md:w-1/5 px-5 md:block z-10 bg-black w-full;
 }
 ul li {
   @apply border-b border-gray-600 py-3;

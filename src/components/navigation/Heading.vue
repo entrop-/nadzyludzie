@@ -1,12 +1,14 @@
 <template>
   <div class="top">
-    <h1><i class="material-icons">run_circle</i><span class="font-bold">Nadzy</span><span class="italic">ludzie</span></h1>
-    <form class="search" @submit.prevent="onSearch">
-      <div class="relative">
-        <input type="text" placeholder="Szukaj seksownych wideo..." v-model="kink" class="focus:appearance-none">
-        <button type="submit" class="text-pink-300"><i class="material-icons">search</i></button>
-      </div>
-    </form>
+    <div class="top__container">
+      <h1><i class="material-icons">run_circle</i><span class="font-bold">Nadzy</span><span class="italic">ludzie</span></h1>
+      <form class="search" @submit.prevent="onSearch">
+        <div class="relative">
+          <input type="text" placeholder="Szukaj seksownych wideo..." v-model="kink" class="focus:appearance-none">
+          <button type="submit" class="text-pink-300"><i class="material-icons">search</i></button>
+        </div>
+      </form>
+    </div>
   </div>
 
 </template>
@@ -19,7 +21,6 @@ export default {
   setup() {
     const kink = ref(null);
     const onSearch = function() {
-      console.log({ kink: kink.value })
       router.push({name: 'Search', params: { 'kink': kink.value, 'aa': 'bb' }})
     }
 
@@ -32,12 +33,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 .top {
-  @apply w-full flex flex-row p-3 border-b-2 border-pink-300 mx-5 mb-5;
+  box-sizing: border-box;
+  @apply w-full py-3 px-5 md:mb-5 mb-0;
+  &__container {
+    @apply md:border-b-2 border-pink-300 w-full md:flex flex-row;
+  }
 }
 h1 {
   font-size: 3rem;
   line-height: 3rem;
-  @apply text-pink-300 uppercase  w-full  mb-5;
+  @apply text-pink-300 uppercase w-full mb-2 md:mb-5 whitespace-nowrap;
   i {
     font-size: 2.7rem;
     top: 4px;
@@ -45,10 +50,10 @@ h1 {
   }
 }
 form {
-  @apply relative w-1/4 pt-4;
+  @apply relative w-full md:w-1/4 pt-4;
 }
 input {
-  @apply w-full py-1 px-3 bg-gray-600;
+  @apply w-full py-1 px-3 bg-gray-600 border-b-2 border-pink-300;
 }
 button {
   top: 4px;

@@ -27,7 +27,6 @@ export default {
     let showError = ref(false);
     const words = ['ekonomia', 'polityka', 'odpowiedzialność', 'podatki']
     const onSubmit = function () {
-      console.log(words.includes(password.value))
       if (words.includes(password.value)) {
         document.cookie = "adult=true";
         router.push({name: 'Amateur'})
@@ -47,10 +46,12 @@ export default {
 <style lang="scss" scoped>
 
 .login {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  @apply md:absolute w-full md:w-1/4 h-auto border-8 border-pink-300 p-5;
+  @screen md {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+  @apply md:absolute w-full md:w-1/4 h-auto border-8 border-pink-300 p-5 mt-8 md:mt-0;
 }
 p {
   @apply mb-3 text-xl;
@@ -69,7 +70,7 @@ form {
   @apply relative w-full mt-5;
 }
 input {
-  @apply w-full py-1 px-3 bg-gray-600;
+  @apply w-full py-1 px-3 bg-gray-600 border-b-2 border-pink-300;
 }
 button {
   top: 4px;
