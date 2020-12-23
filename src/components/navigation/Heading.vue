@@ -40,11 +40,17 @@ export default {
   }
 }
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
+  @screen md {
+    font-size: 3rem;
+  }
   line-height: 3rem;
   @apply text-pink-300 uppercase w-full mb-2 md:mb-5 whitespace-nowrap;
   i {
-    font-size: 2.7rem;
+    font-size: 2rem;
+    @screen md {
+      font-size: 2.7rem;
+    }
     top: 4px;
     position: relative;
   }

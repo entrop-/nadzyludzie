@@ -1,11 +1,12 @@
 <template>
   <heading />
-  <navigation :show="show" />
+  <navigation :show="show" @handleClick="handleMenu" />
   <main>
     <div class="container relative flex flex-no-wrap justify-between mb-5">
       <h2 v-if="!search">Kategoria: <strong>{{category}}</strong></h2>
       <h2 v-else>Wyniki dla: <strong>{{search}}</strong></h2>
       <button class="hamburger" @click.prevent="handleMenu"><i class="material-icons">menu</i></button>
+      <button class="close" @click.prevent="handleMenu" v-if="show"><i class="material-icons">cancel</i></button>
     </div>
     <one-image v-for="image in images" :key="image" :src="image.src" :search="search" class="images" />
   </main>
@@ -82,6 +83,12 @@ main {
 }
 .hamburger {
   @apply md:hidden text-pink-300 leading-none;
+  i {
+    font-size: 2rem;
+  }
+}
+.close {
+  @apply fixed z-20 top-0 right-0 mt-3 mr-5 text-pink-300;
   i {
     font-size: 2rem;
   }

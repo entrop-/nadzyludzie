@@ -38,7 +38,7 @@ export default {
 
       return t1+':'+t2;
     })
-    const con0 = ['Fake', 'Innocent', 'White', 'Black', 'Latino', 'Big titty', 'Basic', 'My', 'Beautiful', 'Amazing',
+    const con0 = ['Fake', 'Innocent', 'White', 'Black', 'Latino', 'Big titty', 'My', 'Beautiful', 'Amazing', 'Stuck in washing machine',
       'Hot', 'Slutty', 'Sleeping', 'Horny', 'Sexy', 'Polish', 'Naughty', 'Homeless', 'Wet', 'Teen', 'Hentai', 'Pregnant'];
     const con = [
         'girls', 'guy', 'sweet sixteen', 'good boi', 'MILF', 'bitch', 'stepsister', 'mailman',
@@ -55,7 +55,7 @@ export default {
   ];
     const con4 = ['in fake taxi', 'on prom night', 'with midgets', 'in public', 'in the shower', 'next to sleeping sister', 'in dad`s car',
       'and one cup', 'on the internet', 'for money', 'on valentine`s day', 'in church', 'in oil', 'in the pool', 'at the party',
-        'in missionary position', 'for the glory of satan', 'during orgy', 'for job interview',
+        'in missionary position', 'for the glory of satan', 'during orgy', 'for job interview', ', almost caught',
       'with dildo', 'in forest', 'in school', 'without protection', 'in latex', 'on webcam', '[UCENSORED]', '[DRASTIC]', '[LIVE]']
 
     const useSearch = (text) => {
