@@ -14,7 +14,7 @@
 <!--      //sojuz x tomaszek x iga-->
       <li><router-link :to="{ name: 'Natural' }">Natural</router-link></li>
       <!--      //wycieczki-->
-      <li><router-link :to="{ name: 'Hentai' }">Hentai</router-link></li>
+<!--      <li><router-link :to="{ name: 'Hentai' }">Hentai</router-link></li>-->
 <!--      //rysuneczki igi-->
     </ul>
   </nav>

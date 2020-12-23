@@ -35,19 +35,23 @@ export default {
       return t1+':'+t2;
     })
     const con0 = ['Fake', 'Innocent', 'White', 'Black', 'Latino', 'Big titty', 'Basic', 'My',
-      'Hot', 'Slutty', 'Sleeping', 'Horny'];
+      'Hot', 'Slutty', 'Sleeping', 'Horny', 'Sexy', 'Polish', 'Naughty', 'Homeless', 'Wet', 'Teen', 'Hentai', 'Pregnant'];
     const con = [
         'girls', 'guy', 'sweet sixteen', 'good boi', 'MILF', 'bitch', 'stepsister', 'mailman',
         'twin sisters', 'midget', 'sister', 'amateur', 'gamer girl', 'priest', 'streamer', 'pizza guy', 'senpai',
-        'blonde', 'waifu'
+        'blonde', 'waifu', 'Firefighter', 'beast', 'girlfriend', 'treesome', 'wet hole', 'girl next door', 'babysitter', 'schoolgirl',
+      'tomboy', 'virgin', 'nurse', 'slave', 'colege student'
+
     ];
     const con2 = [
-        'hard fucks', 'is going wild with', 'licks off', 'is powerfisting', 'shags', 'gets it on with', 'bonks', 'bangs', 'titty twists',
-        'puts his big black cock in', 'cums on', 'masturbates', 'wanks off'
-    ];
-    const con3 = ['on', 'for', 'next to', 'in']
-    const con4 = ['fake taxi', 'prom night', 'midgets', 'public', 'the shower', 'sleeping sister', 'dad`s car',
-      'one cup', 'internet', 'money', 'valentine`s day', 'church' ]
+        'hard fucks', 'is going wild with', 'licks off', 'is powerfisting', 'shags', 'gets it on with', 'bonks', 'bangs', 'titty-twists',
+        'puts his big black cock in', 'cums on', 'masturbates', 'wanks off',
+      'crempies', 'gently makes love', 'is peeking', 'tries anal for first time', 'deepthroats', 'takes full load of'
+
+  ];
+    const con4 = ['in fake taxi', 'on prom night', 'with midgets', 'in public', 'in the shower', 'next to sleeping sister', 'in dad`s car',
+      'and one cup', 'on internet', 'for money', 'on valentine`s day', 'in church',
+      'with dildo', 'in forest', 'in school', 'without protection', 'in latex', 'on webcam', '[UCENSORED]', '[DRASTIC]', '[LIVE]']
 
     const title = computed(() => {
       return randomItem(con0) +' '
@@ -55,7 +59,6 @@ export default {
           + randomItem(con2)+' '
           + randomItem(con0).toLowerCase() +' '
           + randomItem(con)+' '
-          + randomItem(con3)+' '
           + randomItem(con4);
     });
     function randomItem(items) { return items[Math.floor(Math.random() * items.length)]; }

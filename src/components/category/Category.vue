@@ -2,7 +2,8 @@
   <heading />
   <navigation />
   <main>
-    <h2>Kategoria: <strong>{{category}}</strong></h2>
+    <h2 v-if="!search">Kategoria: <strong>{{category}}</strong></h2>
+    <h2 v-else>Wyniki dla: <strong>{{search}}</strong></h2>
     <one-image v-for="image in images" :key="image" :src="image.src" class="images" />
   </main>
 </template>
@@ -16,17 +17,32 @@ import fileList          from '@/assets/images';
 import { computed } from '@vue/reactivity';
 
 export default {
-  async beforeRouteEnter(to, from, next) {
-    next();
-  },
   setup() {
     const route = useRoute();
+    const search = computed(()=> { return route.params.kink });
     const category = computed(()=> { return route.name.toLowerCase() });
     const fileNames = computed(()=> { return fileList[category.value] });
     const images = computed(()=> {
-      return fileNames.value.map((name) => {
-        return {src: category.value +'/'+ name};
-      });
+      if (category.value !== 'search') {
+        return fileNames.value.map((name) => {
+          return {src: category.value +'/'+ name};
+        });
+      } else {
+        // random results
+        const categories = ['gay', 'natural', 'lesbian', 'gangbang', 'amateur', 'furry'];
+        let flat = []
+        categories.map((cat) => {
+          flat.push( ...fileList[cat].map((file)=>{
+            return cat + '/' + file;
+          }));
+        })
+        const shuffled = flat.sort(() => 0.5 - Math.random());
+
+        return shuffled.slice(0, Math.floor(Math.random() * flat.length / 5)).map((name) => {
+          return {src: name};
+        });
+      }
+
     });
 
     return {
@@ -34,7 +50,8 @@ export default {
       images,
       category,
       navigation,
-      heading
+      heading,
+      search
     }
   }
 }

@@ -44,8 +44,8 @@ const routes = [
         component: Category
       },
       {
-        name: 'Hentai',
-        path: '/hentai',
+        name: 'Search',
+        path: '/search/:kink',
         component: Category
       }
     ]
