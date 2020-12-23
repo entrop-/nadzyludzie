@@ -6,7 +6,7 @@
         <span class="block text-right ">{{time}}</span>
       </figcaption>
     </figure>
-    <header class="title">{{ title }}</header>
+    <header class="title" v-html="title"></header>
   </article>
 </template>
 
@@ -19,6 +19,10 @@ export default {
       type: String,
       default: '',
     },
+    search: {
+      type: String,
+      default: '',
+    }
   },
   setup(props) {
     const url = computed(()=>{
@@ -34,31 +38,36 @@ export default {
 
       return t1+':'+t2;
     })
-    const con0 = ['Fake', 'Innocent', 'White', 'Black', 'Latino', 'Big titty', 'Basic', 'My',
+    const con0 = ['Fake', 'Innocent', 'White', 'Black', 'Latino', 'Big titty', 'Basic', 'My', 'Beautiful', 'Amazing',
       'Hot', 'Slutty', 'Sleeping', 'Horny', 'Sexy', 'Polish', 'Naughty', 'Homeless', 'Wet', 'Teen', 'Hentai', 'Pregnant'];
     const con = [
         'girls', 'guy', 'sweet sixteen', 'good boi', 'MILF', 'bitch', 'stepsister', 'mailman',
-        'twin sisters', 'midget', 'sister', 'amateur', 'gamer girl', 'priest', 'streamer', 'pizza guy', 'senpai',
-        'blonde', 'waifu', 'Firefighter', 'beast', 'girlfriend', 'treesome', 'wet hole', 'girl next door', 'babysitter', 'schoolgirl',
-      'tomboy', 'virgin', 'nurse', 'slave', 'colege student'
+        'twin sisters', 'midget', 'sister', 'amateur', 'gamer girl', 'priest', 'streamer', 'pizza delivery guy', 'senpai',
+        'blonde', 'waifu', 'firefighter', 'girlfriend', 'treesome', 'wet hole', 'girl next door', 'babysitter', 'schoolgirl',
+      'tomboy', 'virgin', 'nurse', 'slave', 'colege student', 'cock', 'police officer', 'pimp'
 
     ];
     const con2 = [
-        'hard fucks', 'is going wild with', 'licks off', 'is powerfisting', 'shags', 'gets it on with', 'bonks', 'bangs', 'titty-twists',
-        'puts his big black cock in', 'cums on', 'masturbates', 'wanks off',
-      'crempies', 'gently makes love', 'is peeking', 'tries anal for first time', 'deepthroats', 'takes full load of'
+        'hard fucks', 'is going wild with', 'licks off', 'is fisting', 'shags', 'gets it on with', 'bonks', 'bangs', 'titty-twists',
+        'puts his big black cock in', 'cums on', 'masturbates', 'wanks off', 'watches', 'gives massage to', 'begs for',
+      'creampies', 'gently makes love to', 'is peeking on', 'tries anal for first time with', 'deepthroats', 'takes full load of'
 
   ];
     const con4 = ['in fake taxi', 'on prom night', 'with midgets', 'in public', 'in the shower', 'next to sleeping sister', 'in dad`s car',
-      'and one cup', 'on internet', 'for money', 'on valentine`s day', 'in church',
+      'and one cup', 'on the internet', 'for money', 'on valentine`s day', 'in church', 'in oil', 'in the pool', 'at the party',
+        'in missionary position', 'for the glory of satan', 'during orgy', 'for job interview',
       'with dildo', 'in forest', 'in school', 'without protection', 'in latex', 'on webcam', '[UCENSORED]', '[DRASTIC]', '[LIVE]']
 
+    const useSearch = (text) => {
+      if (!props.search.length) return text;
+      return Math.random() < 0.5 ? text : '<span class="text-pink-200">'+props.search+'</span>';
+    }
     const title = computed(() => {
       return randomItem(con0) +' '
-          + randomItem(con)+' '
+          + useSearch(randomItem(con))+' '
           + randomItem(con2)+' '
           + randomItem(con0).toLowerCase() +' '
-          + randomItem(con)+' '
+          + useSearch(randomItem(con))+' '
           + randomItem(con4);
     });
     function randomItem(items) { return items[Math.floor(Math.random() * items.length)]; }

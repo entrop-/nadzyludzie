@@ -4,7 +4,7 @@
   <main>
     <h2 v-if="!search">Kategoria: <strong>{{category}}</strong></h2>
     <h2 v-else>Wyniki dla: <strong>{{search}}</strong></h2>
-    <one-image v-for="image in images" :key="image" :src="image.src" class="images" />
+    <one-image v-for="image in images" :key="image" :src="image.src" :search="search" class="images" />
   </main>
 </template>
 
@@ -17,6 +17,13 @@ import fileList          from '@/assets/images';
 import { computed } from '@vue/reactivity';
 
 export default {
+  beforeRouteEnter(to, from, next) {
+    if (document.cookie.split(';').some((item) => item.trim().startsWith('adult='))) {
+      next();
+    }else{
+      next({name: 'Home'});
+    }
+  },
   setup() {
     const route = useRoute();
     const search = computed(()=> { return route.params.kink });
